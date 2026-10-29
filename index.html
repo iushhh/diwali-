@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diwali Party · Saturday, 7 November</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF4DC; --bg2:#FBE3B0; --ink:#2A1240; --muted:#6B4A78;
+  --gold:#C26A00; --pink:#B3205A; --line:rgba(42,18,64,.2); --glow:rgba(246,162,30,.35);
+  --display:"Yatra One","Rozha One",Georgia,serif; --body:"Mukta","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B0C2B; --bg2:#2D1449; --ink:#FFF1D6; --muted:#C9B3D6;
+    --gold:#F6A21E; --pink:#FF6B9A; --line:rgba(255,241,214,.2); --glow:rgba(246,162,30,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B0C2B; --bg2:#2D1449; --ink:#FFF1D6; --muted:#C9B3D6;
+  --gold:#F6A21E; --pink:#FF6B9A; --line:rgba(255,241,214,.2); --glow:rgba(246,162,30,.28);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+.hero{
+  text-align:center;padding:56px 20px 64px;
+  background:radial-gradient(ellipse 70% 60% at 50% 18%,var(--glow),transparent 70%),linear-gradient(var(--bg),var(--bg2));
+}
+.diya{width:min(220px,55vw);height:auto;display:block;margin:0 auto 8px;overflow:visible}
+.flame{transform-origin:110px 92px;animation:flicker 2.4s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1) rotate(0)}30%{transform:scale(.94,1.06) rotate(-2deg)}60%{transform:scale(1.04,.96) rotate(1.5deg)}}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.8rem,11vw,5.5rem);line-height:1.02;margin:8px 0 6px;color:var(--gold);letter-spacing:.01em}
+.lede{font-size:1.2rem;color:var(--muted);margin:0 auto 28px;max-width:30ch}
+.date{display:inline-block;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 28px;font-family:var(--display);font-size:clamp(1.4rem,5vw,2rem)}
+.date small{display:block;font-family:var(--body);font-size:1rem;color:var(--pink);font-weight:600;margin-top:2px}
+main{max-width:680px;margin:0 auto;padding:8px 20px 56px}
+h2{font-family:var(--display);font-weight:400;font-size:1.9rem;margin:48px 0 18px;color:var(--gold)}
+.timeline{list-style:none;margin:0;padding:0 0 0 28px;border-left:2px solid var(--gold);position:relative}
+.timeline li{position:relative;padding:0 0 28px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-37px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--gold);box-shadow:0 0 12px var(--glow)}
+.timeline li.quiet::before{border-color:var(--pink)}
+.time{font-family:var(--display);font-size:1.35rem;display:block}
+.timeline p{margin:2px 0 0;color:var(--muted)}
+dl{margin:0}
+.row{display:grid;grid-template-columns:minmax(110px,1fr) 3fr;gap:6px 24px;padding:20px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+dt{font-family:var(--display);font-size:1.25rem;color:var(--pink)}
+dd{margin:0}
+dd strong{font-weight:600}
+.games{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+.games li{border:1px solid var(--gold);border-radius:999px;padding:3px 14px;font-size:.98rem}
+.close{text-align:center;margin-top:56px;font-family:var(--display);font-size:1.6rem;color:var(--gold)}
+.close span{display:block;font-family:var(--body);font-size:1rem;color:var(--muted);margin-top:6px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.flame{animation:none}}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.diya{cursor:pointer}
+.diya.out .flame{display:none}
+.diya.out ellipse{opacity:0}
+.hero{transition:filter .6s}
+body.dim .hero{filter:brightness(.6)}
+.hint{margin:0;font-size:.95rem;color:var(--muted)}
+.count{display:flex;justify-content:center;gap:12px;margin:26px 0 6px}
+.count div{min-width:64px;padding:8px 6px;border:1px solid var(--line);border-radius:12px;font-size:.85rem;color:var(--muted)}
+.count b{display:block;font-family:var(--display);font-weight:400;font-size:1.8rem;color:var(--gold);line-height:1.1}
+.cnote{margin:0;color:var(--muted)}
+.btn{display:inline-block;margin-top:18px;padding:10px 22px;border-radius:999px;border:2px solid var(--gold);color:var(--ink);background:transparent;text-decoration:none;font:600 1rem var(--body);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="diya" id="diya" viewBox="0 0 220 170" role="button" tabindex="0" aria-pressed="true" aria-label="Diya. Press to blow out or relight the flame">
+    <defs>
+      <linearGradient id="fl" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#FF8A00"/><stop offset=".6" stop-color="#FFC233"/><stop offset="1" stop-color="#FFF3B0"/>
+      </linearGradient>
+      <linearGradient id="cl" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#E0792B"/><stop offset="1" stop-color="#8E3410"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="110" cy="92" rx="70" ry="48" fill="#F6A21E" opacity=".18"/>
+    <g class="flame">
+      <path d="M110 30 C128 56 134 74 110 94 C86 74 92 56 110 30Z" fill="url(#fl)"/>
+      <path d="M110 58 C118 72 119 82 110 92 C101 82 102 72 110 58Z" fill="#FFF8D6"/>
+    </g>
+    <path d="M110 92 v10" stroke="#3A1A0A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M32 104 Q110 96 188 104 Q184 150 110 154 Q36 150 32 104Z" fill="url(#cl)"/>
+    <path d="M32 104 Q110 112 188 104" fill="none" stroke="#FFC233" stroke-width="3"/>
+    <path d="M58 124 Q110 134 162 124" fill="none" stroke="#FFC233" stroke-width="2" stroke-dasharray="2 7" stroke-linecap="round"/>
+  </svg>
+  <p class="hint" id="hint">Tap the diya to blow it out. Tap again to relight.</p>
+  <h1>Diwali Party</h1>
+  <p class="lede">Ayush invites you to celebrate the festival of lights.</p>
+  <div class="date">Saturday, 7 November<small>Starts at 6:30 PM</small></div>
+  <div class="count" id="count"><div><b id="cd">0</b>days</div><div><b id="ch">0</b>hours</div><div><b id="cm">0</b>mins</div><div><b id="cs">0</b>secs</div></div>
+  <p class="cnote" id="cnote"></p>
+  <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Diwali%20Party%20at%20Ayush%27s&amp;dates=20261107T183000/20261107T230000&amp;ctz=Asia/Kolkata&amp;location=Sobha%20Apartments%2C%20Nagasandra&amp;details=Indian%20traditional%20attire.%20BYOB.%20Games%2C%20snacks%20and%20firecrackers.">Add to calendar</a>
+</header>
+
+<main>
+  <h2>The evening</h2>
+  <ol class="timeline">
+    <li>
+      <span class="time">6:30 PM</span>
+      <p>Doors open. Music, games and snacks begin.</p>
+    </li>
+    <li>
+      <span class="time">11:00 PM</span>
+      <p>The music wraps up.</p>
+    </li>
+    <li class="quiet">
+      <span class="time">After 11</span>
+      <p>Want to stay? Please do. There won’t be any loud music, just good company and conversation.</p>
+    </li>
+  </ol>
+
+  <h2>Good to know</h2>
+  <dl>
+    <div class="row">
+      <dt>Venue</dt>
+      <dd><strong>Sobha Apartments, Nagasandra.</strong> Hosted at Ayush’s place.</dd>
+    </div>
+    <div class="row">
+      <dt>Dress code</dt>
+      <dd><strong>Indian traditional attire.</strong> Kurtas, sarees, lehengas, sherwanis, whatever you love wearing on festival days.</dd>
+    </div>
+    <div class="row">
+      <dt>Drinks</dt>
+      <dd><strong>BYOB.</strong> Bring your own bottle.</dd>
+    </div>
+    <div class="row">
+      <dt>Food</dt>
+      <dd>Some snacks will be there.</dd>
+    </div>
+    <div class="row">
+      <dt>Games</dt>
+      <dd>
+        Lots of them, and we will keep them going all night.
+        <ul class="games">
+          <li>Card games</li><li>Mafia</li><li>Imposter</li><li>And more</li>
+        </ul>
+      </dd>
+    </div>
+    <div class="row">
+      <dt>Firecrackers</dt>
+      <dd>Bring your own firecrackers if you like.</dd>
+    </div>
+  </dl>
+
+  <p class="close">Happy Diwali!<span>See you at Ayush’s place on Saturday, 7 November, at 6:30 PM.</span></p>
+</main>
+<canvas id="fx" aria-hidden="true"></canvas>
+<script>
+(function(){
+function $(i){return document.getElementById(i)}
+var cv=$('fx'),cx=cv.getContext('2d'),P=[],run=false,
+rm=matchMedia('(prefers-reduced-motion:reduce)').matches,
+C=['#F6A21E','#FFC233','#FF6B9A','#FFF1D6','#2FC4B2'];
+function fit(){var r=devicePixelRatio||1;cv.width=innerWidth*r;cv.height=innerHeight*r;cx.setTransform(r,0,0,r,0,0)}
+fit();addEventListener('resize',fit);
+function burst(x,y,n){if(rm)return;for(var i=0;i<n;i++){var a=Math.random()*6.283,s=2+Math.random()*5;P.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:C[i%C.length]})}if(!run){run=true;requestAnimationFrame(tick)}}
+function tick(){cx.clearRect(0,0,innerWidth,innerHeight);for(var i=P.length-1;i>=0;i--){var p=P[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.12;p.vx*=.98;p.l-=.02;if(p.l<=0){P.splice(i,1);continue}cx.globalAlpha=p.l;cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,2.2,0,6.283);cx.fill()}cx.globalAlpha=1;if(P.length){requestAnimationFrame(tick)}else{run=false}}
+document.addEventListener('pointerdown',function(e){burst(e.clientX,e.clientY,26)});
+
+var d=$('diya'),h=$('hint');
+function toggle(){var out=d.classList.toggle('out');document.body.classList.toggle('dim',out);d.setAttribute('aria-pressed',String(!out));h.textContent=out?'The diya is out. Tap it to relight.':'Tap the diya to blow it out. Tap again to relight.';if(!out){var r=d.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.4,60)}}
+d.addEventListener('click',toggle);
+d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+
+var T=new Date('2026-11-07T18:30:00+05:30').getTime(),E=new Date('2026-11-07T23:00:00+05:30').getTime();
+function cd(){var n=Date.now(),t=T-n;if(t<=0){$('count').style.display='none';$('cnote').textContent=n<E?'The party is on. Come on over!':'Thanks for celebrating with us. Happy Diwali!';return}var s=Math.floor(t/1000);$('cd').textContent=Math.floor(s/86400);$('ch').textContent=Math.floor(s%86400/3600);$('cm').textContent=Math.floor(s%3600/60);$('cs').textContent=s%60;$('cnote').textContent='until the lights come on'}
+cd();setInterval(cd,1000);
+
+})();
+</script>
+</body>
+</html>
